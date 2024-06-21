@@ -1,4 +1,4 @@
-package br.com.vidaplena.escoladeministerios.alunos;
+package br.com.vidaplena.escoladeministerios.alunos.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
