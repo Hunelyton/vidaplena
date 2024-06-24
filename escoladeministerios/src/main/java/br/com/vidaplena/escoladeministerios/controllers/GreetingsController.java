@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import br.com.vidaplena.escoladeministerios.alunos.model.Alunos;
 import br.com.vidaplena.escoladeministerios.repository.AlunoRepository;
@@ -50,7 +50,7 @@ public class GreetingsController {
 		return "Hello " + name + "!";
 	}
 
-	@GetMapping(value = "listatodos")
+	@GetMapping(value = "listaalunos")
 	@ResponseBody
 	public ResponseEntity<List<Alunos>> listaAlunos() {
 		List<Alunos> alunos = alunosRepository.findAll();
@@ -59,9 +59,9 @@ public class GreetingsController {
 
 	}
 
-	@PostMapping(value = "salvar")
+	@PostMapping(value = "salvaralunos")
 	@ResponseBody
-	public ResponseEntity<Alunos> salvar(@RequestBody Alunos alunos) {
+	public ResponseEntity<Alunos> salvaralunos(@RequestBody Alunos alunos) {
 
 		Alunos aluno = alunosRepository.save(alunos);
 
@@ -79,9 +79,9 @@ public class GreetingsController {
 
 	}
 
-	@DeleteMapping(value = "delete")
+	@DeleteMapping(value = "deletealunos")
 	@ResponseBody
-	public ResponseEntity<String> delete(@RequestParam Long idaluno) {
+	public ResponseEntity<String> deletealunos(@RequestParam Long idaluno) {
 
 		alunosRepository.deleteById(idaluno);
 
@@ -89,9 +89,9 @@ public class GreetingsController {
 
 	}
 
-	@PutMapping(value = "atualizar")
+	@PutMapping(value = "atualizaralunos")
 	@ResponseBody
-	public ResponseEntity<?> atualizar(@RequestBody Alunos alunos) {
+	public ResponseEntity<?> atualizaralunos(@RequestBody Alunos alunos) {
 
 		if (alunos.getId() == null) {
 			return new ResponseEntity<String>("ID do aluno não informado para atualizar o cadastro.", HttpStatus.OK);
@@ -105,7 +105,7 @@ public class GreetingsController {
 
 	@GetMapping(value = "buscarPorNome")
 	@ResponseBody
-	public ResponseEntity<List<Alunos>> buscarPorNome(@RequestParam(name = "name") String name) {
+	public ResponseEntity<List<Alunos>> buscarAlunosPorNome(@RequestParam(name = "name") String name) {
 
 		List<Alunos> aluno = alunosRepository.buscarPorNome(name.trim());
 
@@ -113,11 +113,7 @@ public class GreetingsController {
 
 	}
 	
-/*	@GetMapping("/")
-	public ModelAndView login() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("Login/login");
-		return mv;
-		
-	}*/
+	
+	
+	
 }
