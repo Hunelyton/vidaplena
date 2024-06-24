@@ -48,7 +48,7 @@ public class GreetingsController {
     @GetMapping(value = "listatodos")
     @ResponseBody
     public ResponseEntity<List<Alunos>> listaAlunos() {
-        List<Alunos> alunos = alunosRepository.findAll(); // Corrija o método para findAll()
+        List<Alunos> alunos = alunosRepository.findAll(); 
 
         return new ResponseEntity<>(alunos, HttpStatus.OK);
     	
