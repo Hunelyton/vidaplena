@@ -38,7 +38,8 @@ public class GreetingsController {
 	 * @return greeting text
 	 */
 
-	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
+	/**
+	 * @RequestMapping(value = "/{name}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	public String greetingText(@PathVariable String name) {
 
@@ -48,7 +49,7 @@ public class GreetingsController {
 		alunosRepository.save(alunos);
 
 		return "Hello " + name + "!";
-	}
+	}**/
 
 	@GetMapping(value = "listaalunos")
 	@ResponseBody
