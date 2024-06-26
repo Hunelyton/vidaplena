@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida Plena Escola de Ministérios</title>
+<!-- Link para o Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<!-- Seu arquivo CSS personalizado (cadastroaluno.css) -->
+<link rel="stylesheet" href="cadastroaluno.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="mt-5">Cadastro de Alunos</h1>
+		<form action="" class="formCadastroAluno">
+			<div class="row mb-3">
+				<div class="col">
+					<label for="id" class="form-label fs-6">ID:</label> <input
+						type="text" class="form-control" id="id" placeholder=""
+						readonly="readonly">
+				</div>
+				<div class="col">
+					<label for="nome" class="form-label">Nome:</label> <input
+						type="text" class="form-control" id="nome"
+						placeholder="Nome Completo">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label for="telefone" class="form-label">Telefone:</label> <input
+						type="text" class="form-control" id="telefone"
+						placeholder="13999999999">
+				</div>
+				<div class="col">
+					<label for="inputEmail4" class="form-label">Email:</label> <input
+						type="email" class="form-control" id="email"
+						placeholder="exemplo@exemplo.com">
+				</div>
+			</div>
+			<div class="mb-3">
+				<label for="endereco" class="form-label">Endereço:</label> <input
+					type="text" class="form-control" id="endereco"
+					placeholder="Exemplo: Rua Central, 123 - Centro">
+			</div>
+			<div class="mb-3">
+				<label for="cidade" class="form-label">Cidade:</label> <input
+					type="text" class="form-control" id="cidade" placeholder="Cidade">
+			</div>
+			<div class="mb-3">
+				<label for="estado" class="form-label">Estado:</label> <select
+					id="estado" class="form-select">
+					<option selected>Escolha a UF</option>
+					<option>SP</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label for="cep" class="form-label">CEP:</label> <input type="text"
+					class="form-control" id="cep" placeholder="11000-000">
+			</div>
+
+		</form>
+		<button type="button" class="btn btn-primary"
+			onclick="salvarUsuario()">SALVAR</button>
+	</div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+		crossorigin="anonymous"></script>
+	<!-- Scripts do Bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript">
+		function salvarUsuario() {
+			var id = $("#id").val();
+			var nome = $("#nome").val();
+			var telefone = $("#telefone").val();
+			var email = $("#email").val();
+			var endereco = $("#endereco").val();
+			var cidade = $("#cidade").val();
+			var estado = $("#estado").val();
+			var cep = $("#cep").val();
+
+				$.ajax({
+				method : "POST",
+				url : "salvaralunos",
+				data : JSON.stringify({
+					id : id,
+					nome : nome,
+					telefone : telefone,
+					email : email,
+					endereco : endereco,
+					cidade : cidade,
+					estado : estado,
+					cep : cep
+				}),
+				contentType : "application/json; charset-utf-8",
+				success : function(response) {
+					alert("Aluno incluído com sucesso !");
+				}
+			}).fail(function(xhr, status, erroThrown) {
+				alert("Erro ao incluir aluno: " + xhr.responseText);
+			})
+		}
+	</script>
+</body>
+</html>

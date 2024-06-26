@@ -21,9 +21,20 @@ public class Alunos {
 	@Column(length = 100, nullable = false)
 	private String nome;
 	
-	@Column(length = 100, nullable = true)
+	@Column(length = 11, nullable = false)
+	private String cpf;
+	
+	@Column(length = 11, nullable = true)
 	private String telefone;
 	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
 	@Column(length = 100, nullable = true)
 	private String email;
 	

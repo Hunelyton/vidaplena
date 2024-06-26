@@ -16,4 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         bodyElement.classList.add(currentTheme);
         checkbox.checked = (currentTheme === 'light-theme');
     }
+
+    // Função para redirecionar para outra página
+    function redirect() {
+       
+        window.location.href = 'static/cadastroaluno/cadastroaluno.html';
+    }
 });
