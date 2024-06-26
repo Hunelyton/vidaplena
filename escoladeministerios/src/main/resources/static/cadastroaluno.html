@@ -31,18 +31,8 @@
 						type="text" class="form-control" id="nome"
 						placeholder="Nome Completo">
 				</div>
-				<div class="col">
-					<label for="telefone" class="form-label">Telefone:</label> <input
-						type="text" class="form-control" id="telefone"
-						placeholder="13999999999">
-				</div>
 			</div>
 			<div class="row mb-3">
-				<div class="col">
-					<label for="inputEmail4" class="form-label">Email:</label> <input
-						type="email" class="form-control" id="email"
-						placeholder="exemplo@exemplo.com">
-				</div>
 				<div class="col">
 					<label for="endereco" class="form-label">Endereço:</label> <input
 						type="text" class="form-control" id="endereco"
@@ -113,8 +103,8 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal"
 							aria-label="Close"></button>
 					</div>
-					
-					
+
+
 					<div class="modal-body">
 						<form>
 							<div class="mb-3">
@@ -124,23 +114,25 @@
 
 							</div>
 
-							<button type="button" class="btn btn-danger" onclick="pesquisaAluno">BUSCAR</button>
+							<button type="button" class="btn btn-danger"
+								onclick="pesquisaAluno()">BUSCAR</button>
 
 						</form>
-						
-						<table class="table" id="tabelaResultado">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">NOME</th>
-      <th scope="col">TELEFONE</th>
-      <th scope="col">EMAIL</th>
-    </tr>
-  </thead>
-  <tbody>
 
-  </tbody>
-</table>
+						<table class="table" id="tabelaResultado">
+							<thead>
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">NOME</th>
+									<th scope="col">TELEFONE</th>
+									<th scope="col">EMAIL</th>
+									<th scope="col">AÇÕES</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
@@ -163,35 +155,38 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script type="text/javascript">
-	
-	
-		function salvarUsuario() {
-			var id = $("#nomeAluno").val();
+		function pesquisaAluno() {
+			var nome = $("#nomeAluno").val();
 
-			if (nome = null && nome.trim()!= '' ){
-				
-				$.ajax({
-					method : "GET",
-					url : "buscarPorNome",
-					data : JSON.stringify({
-						name : nome,
-					
-						telefone : telefone,
-						email : email
+			if (nome != null && nome.trim() != '') {
 
-					}),
-					contentType : "application/json; charset-utf-8",
-					success : function(response) {
-						
-					}
-				}).fail(function(xhr, status, erroThrown) {
+				$.ajax(
+						{
+							method : "GET",
+							url : "buscarPorNome",
+							data : "name=" + nome,
+							success : function(response) {
+								$('#tabelaResultado > tbody > tr').remove();
+
+								for (var i = 0; i < response.length; i++) {
+									$('#tabelaResultado > tbody').append(
+											'<tr><td>' + response[i].id
+													+ '</td><td>'
+													+ response[i].nome
+													+ '</td><td>'
+													+ response[i].telefone
+													+ '</td><td>'
+													+ response[i].email
+													+ '</td><td><button type="button" class="btn btn-primary">EDITAR</button></td></tr>');
+								}
+
+							}
+						}).fail(function(xhr, status, erroThrown) {
 					alert("Erro ao buscar aluno: " + xhr.responseText);
 				})
 			}
 		}
-		
-		
-		
+
 		function salvarUsuario() {
 			var id = $("#id").val();
 			var nome = $("#nome").val();

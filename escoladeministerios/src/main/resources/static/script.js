@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const checkbox = document.getElementById('checkbox');
-    const bodyElement = document.body;
-    
-    function applyTheme(lightTheme) {
-        bodyElement.classList.toggle('light-theme', lightTheme);
-        localStorage.setItem('theme', lightTheme ? 'light-theme' : '');
-    }
+	const checkbox = document.getElementById('checkbox');
+	const bodyElement = document.body;
 
-    checkbox.addEventListener('change', function() {
-        applyTheme(this.checked);
-    });
+	function applyTheme(lightTheme) {
+		bodyElement.classList.toggle('light-theme', lightTheme);
+		localStorage.setItem('theme', lightTheme ? 'light-theme' : '');
+	}
 
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        bodyElement.classList.add(currentTheme);
-        checkbox.checked = (currentTheme === 'light-theme');
-    }
+	checkbox.addEventListener('change', function() {
+		applyTheme(this.checked);
+	});
 
-    // Função para redirecionar para outra página
-    function redirect() {
-       
-        window.location.href = 'static/cadastroaluno/cadastroaluno.html';
-    }
+	const currentTheme = localStorage.getItem('theme');
+	if (currentTheme) {
+		bodyElement.classList.add(currentTheme);
+		checkbox.checked = (currentTheme === 'light-theme');
+	}
+
+
+	function redirect() {
+		// Redireciona para a página cadastroaluno.html
+		window.location.href = 'static/cadastroaluno.html';
+	}
 });
