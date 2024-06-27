@@ -45,7 +45,7 @@ public class GreetingsController {
 
 		return "Hello " + name + "!";
 	}**/
-
+	/*LISTAR ALUNO*/
 	@GetMapping(value = "listaalunos")
 	@ResponseBody
 	public ResponseEntity<List<Alunos>> listaAlunos() {
@@ -54,7 +54,8 @@ public class GreetingsController {
 		return new ResponseEntity<>(alunos, HttpStatus.OK);
 
 	}
-
+	
+	/*SALVAR ALUNO*/
 	@PostMapping(value = "salvaralunos")
 	@ResponseBody
 	public ResponseEntity<Alunos> salvaralunos(@RequestBody Alunos alunos) {
@@ -64,7 +65,8 @@ public class GreetingsController {
 		return new ResponseEntity<Alunos>(alunos, HttpStatus.CREATED);
 
 	}
-
+	
+	/*BUSCAR ALUNO*/
 	@GetMapping(value = "buscaralunoid")
 	@ResponseBody
 	public ResponseEntity<Alunos> buscaralunoid(@RequestParam(name = "idaluno") Long idaluno) {
@@ -74,7 +76,8 @@ public class GreetingsController {
 		return new ResponseEntity<Alunos>(aluno, HttpStatus.OK);
 
 	}
-
+	
+	/*DELETAR ALUNO*/
 	@DeleteMapping(value = "deletealunos")
 	@ResponseBody
 	public ResponseEntity<String> deletealunos(@RequestParam Long idaluno) {
@@ -84,7 +87,9 @@ public class GreetingsController {
 		return new ResponseEntity<String>("Aluno excluído com sucesso!", HttpStatus.OK);
 
 	}
-
+	
+	
+	/*ATUALIZAR ALUNO*/
 	@PutMapping(value = "atualizaralunos")
 	@ResponseBody
 	public ResponseEntity<?> atualizaralunos(@RequestBody Alunos alunos) {
@@ -98,7 +103,8 @@ public class GreetingsController {
 		return new ResponseEntity<Alunos>(aluno, HttpStatus.OK);
 
 	}
-
+	
+	/*BUSCAR ALUNO*/
 	@GetMapping(value = "buscarPorNome")
 	@ResponseBody
 	public ResponseEntity<List<Alunos>> buscarPorNome(@RequestParam(name = "name") String name) {

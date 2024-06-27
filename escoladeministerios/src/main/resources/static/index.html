@@ -19,15 +19,13 @@
 		</label>
 	</div>
 
-	
-
 	<div class="wrapper">
 		<form action="">
 			<img src="img/logoblack.png" alt="" class="logo-light">
 			<h1>Login</h1>
 			
 			<div class="inputbox">
-				<input for=" type="text" placeholder="E-mail" required> <i
+				<input type="text" placeholder="E-mail" required> <i
 					class="bx bxs-user"></i>
 			</div>
 			<div class="inputbox">
@@ -48,13 +46,16 @@
 			<input class="btn" type="button" value="Login" onclick="redirect()">
 		</form>
 	</div>
-	</form>
-	</div>
 
 	<a class="dev" href="https://www.instagram.com/vidaplenaperuibe/">© Desenvolvido por Multimídia
 		Igreja Vida Plena </a>
 
-	<script src="script.js"></script>
+	<script>
+		function redirect() {
+			window.location.href = "cadastroaluno.html";
+		}
+	</script>
 </body>
 
 </html>
+
