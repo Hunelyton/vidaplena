@@ -21,10 +21,10 @@ public class Alunos {
 	@Column(length = 100, nullable = false)
 	private String nome;
 	
-	@Column(length = 11, nullable = false)
+	@Column(length = 20, nullable = true)
 	private String cpf;
 	
-	@Column(length = 11, nullable = true)
+	@Column(length = 20, nullable = true)
 	private String telefone;
 	
 	public String getCpf() {
