@@ -2,14 +2,15 @@
 Repositório dedicado aos projetos da Igreja Vida Plena
 
 # Tecnologias utilizadas
-##Back-End
+
+##Back-End<br>
 Java -
 SpringBoot
 JPA -
 Hibernate -
 MySQL 8
 
-##Front-End
+##Front-End<br>
 HTML
 CSS
 JavaScript
