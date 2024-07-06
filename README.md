@@ -11,7 +11,7 @@ Hibernate -
 MySQL 8
 
 ##Front-End<br>
-HTML
-CSS
-JavaScript
+HTML -
+CSS -
+JavaScript -
 
