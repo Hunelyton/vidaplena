@@ -1,61 +1,58 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vida Plena - Escola de Ministérios</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.122.0">
+<title>Acessar Sistema</title>
+
+
+
+
+<link href="sign-in.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+
+
+
+
+<link href="sign-in.css" rel="stylesheet">
 </head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
 
-<body>
 
-	<div class="theme-switch-wrapper">
-		<label class="theme-switch" for="checkbox"> <input
-			type="checkbox" id="checkbox" />
-			<div class="slider round"></div>
-		</label>
-	</div>
 
-	<div class="wrapper">
-		<form action="">
-			<img src="img/logoblack.png" alt="" class="logo-light">
-			<h1>Login</h1>
+
+
+	<main class="form-signin w-100 m-auto">
+		<form>
+			<img class="logo" src="logoblack.png" alt="" width="72" height="57">
 			
-			<div class="inputbox">
-				<input type="text" placeholder="E-mail" required> <i
-					class="bx bxs-user"></i>
+
+			<div class="form-floating">
+				<input type="email" class="form-control" id="floatingInput"
+					placeholder="name@example.com"> <label for="floatingInput">Login</label>
 			</div>
-			<div class="inputbox">
-				<input type="password" placeholder="Senha" required> <i
-					class='bx bxs-lock-alt'></i>
+			<div class="form-floating">
+				<input type="password" class="form-control" id="floatingPassword"
+					placeholder="Password"> <label for="floatingPassword">Senha</label>
 			</div>
 
-			<div class="remember-forgot">
-				<label><input type="checkbox"> Lembre-me</label>
+			<div class="form-check text-start my-3">
+				<input class="form-check-input" type="checkbox" value="remember-me"
+					id="flexCheckDefault"> <label class="form-check-label"
+					for="flexCheckDefault"> Lembrar </label>
 			</div>
-
-			<div class="href">
-				<p>
-					<a href="#">Solução para problemas no Acesso</a>
-				</p>
-			</div>
-
-			<input class="btn" type="button" value="Login" onclick="redirect()">
+			<button class="btn btn-primary w-100 py-2" type="submit">ACESSAR</button>
+			<p class="mt-5 mb-3 text-body-secondary">&copy; Escola Vida Plena
+				de Ministérios 2024</p>
 		</form>
-	</div>
+	</main>
 
-	<a class="dev" href="https://www.instagram.com/vidaplenaperuibe/">© Desenvolvido por Multimídia
-		Igreja Vida Plena </a>
 
-	<script>
-		function redirect() {
-			window.location.href = "cadastroaluno.html";
-		}
-	</script>
 </body>
-
 </html>
-

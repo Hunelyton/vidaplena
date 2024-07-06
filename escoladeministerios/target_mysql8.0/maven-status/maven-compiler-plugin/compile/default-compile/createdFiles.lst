@@ -1,0 +1,5 @@
+br\com\vidaplena\escoladeministerios\Application.class
+br\com\vidaplena\escoladeministerios\alunos\model\Alunos.class
+br\com\vidaplena\escoladeministerios\teste\Teste.class
+br\com\vidaplena\escoladeministerios\repository\AlunoRepository.class
+br\com\vidaplena\escoladeministerios\controllers\GreetingsController.class

@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.vidaplena.escoladeministerios.alunos.model.Alunos;
+import br.com.vidaplena.escoladeministerios.model.Alunos;
 import br.com.vidaplena.escoladeministerios.repository.AlunoRepository;
+
 
 /**
  *
@@ -27,6 +28,7 @@ public class GreetingsController {
 	@Autowired
 	private AlunoRepository alunosRepository;
 
+
 	/**
 	 *
 	 * @param name the name to greet
@@ -34,18 +36,11 @@ public class GreetingsController {
 	 */
 
 	/**
-	 * @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
-	public String greetingText(@PathVariable String name) {
-
-		Alunos alunos = new Alunos();
-		alunos.setNome(name);
-
-		alunosRepository.save(alunos);
-
-		return "Hello " + name + "!";
-	}**/
-	/*LISTAR ALUNO*/
+	 * 
+	 * @return
+	 */
+	
+	/* LISTAR ALUNO */
 	@GetMapping(value = "listaalunos")
 	@ResponseBody
 	public ResponseEntity<List<Alunos>> listaAlunos() {
@@ -54,8 +49,8 @@ public class GreetingsController {
 		return new ResponseEntity<>(alunos, HttpStatus.OK);
 
 	}
-	
-	/*SALVAR ALUNO*/
+
+	/* SALVAR ALUNO */
 	@PostMapping(value = "salvaralunos")
 	@ResponseBody
 	public ResponseEntity<Alunos> salvaralunos(@RequestBody Alunos alunos) {
@@ -65,8 +60,8 @@ public class GreetingsController {
 		return new ResponseEntity<Alunos>(alunos, HttpStatus.CREATED);
 
 	}
-	
-	/*BUSCAR ALUNO*/
+
+	/* BUSCAR ALUNO */
 	@GetMapping(value = "buscaralunoid")
 	@ResponseBody
 	public ResponseEntity<Alunos> buscaralunoid(@RequestParam(name = "idaluno") Long idaluno) {
@@ -76,8 +71,8 @@ public class GreetingsController {
 		return new ResponseEntity<Alunos>(aluno, HttpStatus.OK);
 
 	}
-	
-	/*DELETAR ALUNO*/
+
+	/* DELETAR ALUNO */
 	@DeleteMapping(value = "deletealunos")
 	@ResponseBody
 	public ResponseEntity<String> deletealunos(@RequestParam Long idaluno) {
@@ -87,9 +82,8 @@ public class GreetingsController {
 		return new ResponseEntity<String>("Aluno excluído com sucesso!", HttpStatus.OK);
 
 	}
-	
-	
-	/*ATUALIZAR ALUNO*/
+
+	/* ATUALIZAR ALUNO */
 	@PutMapping(value = "atualizaralunos")
 	@ResponseBody
 	public ResponseEntity<?> atualizaralunos(@RequestBody Alunos alunos) {
@@ -103,8 +97,8 @@ public class GreetingsController {
 		return new ResponseEntity<Alunos>(aluno, HttpStatus.OK);
 
 	}
-	
-	/*BUSCAR ALUNO*/
+
+	/* BUSCAR ALUNO */
 	@GetMapping(value = "buscarPorNome")
 	@ResponseBody
 	public ResponseEntity<List<Alunos>> buscarPorNome(@RequestParam(name = "name") String name) {
@@ -114,8 +108,11 @@ public class GreetingsController {
 		return new ResponseEntity<List<Alunos>>(aluno, HttpStatus.OK);
 
 	}
+
+	/*--------------------------------API CURSO-------------------------------*/
+
+
 	
 	
-	
-	
+
 }

@@ -1,0 +1,84 @@
+
+/* Define o estilo geral do corpo da página */
+body {
+	font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes */
+	background-size: cover; /* Faz o background cobrir todo o corpo */
+	background-repeat: no-repeat; /* Evita que o background se repita */
+	background-position: center; /* Centraliza o background */
+}
+
+/* Define o estilo geral das divs */
+div {
+	position: absolute; /* Posiciona a div de forma absoluta */
+	top: 50%; /* Centraliza verticalmente a div */
+	left: 50%; /* Centraliza horizontalmente a div */
+	transform: translate(-50%, -50%); /* Ajusta a posição da div para centralizar */
+	padding: 80px; /* Adiciona espaçamento interno */
+	border-radius: 15px; /* Arredonda os cantos da borda */
+	color: #000000; /* Define a cor do texto */
+	text-align: center; /* Centraliza o texto */
+}
+
+/* Define o estilo para botões com a classe 'botao' */
+.botao {
+	background-color: dodgerblue; /* Define a cor de fundo do botão */
+	text-decoration: none; /* Remove a sublinhado do texto */
+	border: none; /* Remove a borda padrão */
+	padding: 15px; /* Adiciona espaçamento interno */
+	width: 100%; /* Define a largura do botão como 100% */
+	border-radius: 10px; /* Arredonda os cantos da borda */
+	color: white; /* Define a cor do texto */
+	font-size: 15px; /* Define o tamanho da fonte */
+}
+
+/* Define o estilo para botões com a classe 'botao' quando o mouse está sobre eles */
+.botao:hover {
+	background-color: #0000ff; /* Muda a cor de fundo ao passar o mouse */
+	cursor: pointer; /* Muda o cursor para um ponteiro (mãozinha) */
+}
+
+/* Define o estilo para a seção do rodapé */
+.rodape {
+	position: absolute; /* Posiciona o rodapé de forma absoluta */
+	bottom: 0; /* Alinha o rodapé ao fundo da página */
+	left: 0; /* Alinha o rodapé à esquerda da página */
+	width: 100%; /* Define a largura do rodapé como 100% */
+	text-align: center; /* Centraliza o texto no rodapé */
+	padding: 6px; /* Adiciona espaçamento interno */
+	background-color: #f3f3f3; /* Define a cor de fundo do rodapé */
+	color: #333; /* Define a cor do texto */
+}
+
+/* Define o estilo para imagens com a classe 'logo' */
+.logo {
+	width: 50%; /* Define a largura da imagem como 50% */
+}
+
+/* Define o estilo para elementos de input */
+.input {
+	width: 100%; /* Define a largura dos inputs como 100% */
+	padding: 8px; /* Adiciona espaçamento interno */
+	margin-bottom: 10px; /* Adiciona espaçamento inferior */
+	border: 1px solid #ccc; /* Define a cor e estilo da borda */
+	border-radius: 5px; /* Arredonda os cantos da borda */
+	box-sizing: border-box; /* Garante que o padding não afete a largura total */
+	font-size: 16px; /* Define o tamanho da fonte */
+}
+
+/* Define o estilo para elementos com a classe 'paginas' */
+.paginas {
+	width: 10%; /* Define a largura como 10% */
+}
+
+/* Define o estilo para fieldsets */
+fieldset {
+	width: 25%; /* Define a largura como 25% da largura da página */
+	height: 25%; /* Define a altura como 25% da altura da página */
+    border-radius: 10px; /* Arredonda os cantos da borda */
+    border: 2px solid rgb(0, 0, 0); /* Define a cor e estilo da borda */
+    padding: 15px; /* Adiciona espaçamento interno */
+}
+.fieldset {
+	width: 100%; /* Define a largura como 25% da largura da página */
+	height: 60%; /* Define a altura como 25% da altura da página */
+}

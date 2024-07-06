@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida Plena - Escola de Ministérios</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+
+<body>
+
+	<div class="theme-switch-wrapper">
+		<label class="theme-switch" for="checkbox"> <input
+			type="checkbox" id="checkbox" />
+			<div class="slider round"></div>
+		</label>
+	</div>
+
+	<div class="wrapper">
+		<form action="">
+			<img src="img/logoblack.png" alt="" class="logo-light">
+			<h1>Login</h1>
+			
+			<div class="inputbox">
+				<input type="text" placeholder="E-mail" required> <i
+					class="bx bxs-user"></i>
+			</div>
+			<div class="inputbox">
+				<input type="password" placeholder="Senha" required> <i
+					class='bx bxs-lock-alt'></i>
+			</div>
+
+			<div class="remember-forgot">
+				<label><input type="checkbox"> Lembre-me</label>
+			</div>
+
+			<div class="href">
+				<p>
+					<a href="#">Solução para problemas no Acesso</a>
+				</p>
+			</div>
+
+			<input class="btn" type="button" value="Login" onclick="redirect()">
+		</form>
+	</div>
+
+	<a class="dev" href="https://www.instagram.com/vidaplenaperuibe/">© Desenvolvido por Multimídia
+		Igreja Vida Plena </a>
+
+	<script>
+		function redirect() {
+			window.location.href = "cadastroaluno.html";
+		}
+	</script>
+</body>
+
+</html>
+
