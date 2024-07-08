@@ -18,6 +18,8 @@ import br.com.vidaplena.escoladeministerios.model.Alunos;
 import br.com.vidaplena.escoladeministerios.repository.AlunoRepository;
 
 
+
+
 /**
  *
  * A sample greetings controller to return greeting text
@@ -27,6 +29,10 @@ public class GreetingsController {
 
 	@Autowired
 	private AlunoRepository alunosRepository;
+	
+
+	
+
 
 
 	/**
@@ -108,11 +114,8 @@ public class GreetingsController {
 		return new ResponseEntity<List<Alunos>>(aluno, HttpStatus.OK);
 
 	}
-
-	/*--------------------------------API CURSO-------------------------------*/
-
-
 	
-	
+
+
 
 }
