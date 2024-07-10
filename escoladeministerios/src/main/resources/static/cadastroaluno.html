@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vida Plena - Escola de Ministérios</title>
 <!-- Link para o Bootstrap CSS -->
-<link rel="stylesheet"
-	href="style.css">
+<link rel="stylesheet" href="style.css">
 <!-- Seu arquivo CSS personalizado (cadastroaluno.css) -->
 <link rel="stylesheet" href="cadastroaluno.css">
 </head>
@@ -17,8 +16,8 @@
 			<div class="row mb-3">
 				<div class="col">
 					<label for="id" class="form-label fs-6"><strong>ID:</strong></label>
-					<input type="text" class="form-control" id="id" placeholder="Preenchimento automático"
-						readonly="readonly">
+					<input type="text" class="form-control" id="id"
+						placeholder="Preenchimento automático" readonly="readonly">
 				</div>
 				<div class="col">
 					<label for="cpf" class="form-label"><strong>*CPF:</strong></label>
@@ -112,53 +111,54 @@
 			onclick="deleteAlunoTela();">EXCLUIR</button>
 		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 			data-bs-target="#exampleModal">PESQUISAR</button>
-			<br>*Dados de preenchimento obrigatório.
+		<button type="button" class="btn btn-secondary" onclick="voltarPagina()">VOLTAR</button>
+		<br>*Dados de preenchimento obrigatório.
 
 
 
-			<div class="modal fade" id="exampleModal" tabindex="-1"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Pesquisa de
-								alunos</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Pesquisa de
+							alunos</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
 
-						<div class="modal-body">
-							<form>
-								<div class="mb-3">
-									<label for="nomeAluno" class="col-form-label">Buscar
-										Alunos:</label> <input type="text" class="form-control" id="nomeAluno"
-										placeholder="Digite o nome ou matrícula do aluno">
-								</div>
-								<button type="button" class="btn btn-primary"
-									onclick="pesquisaAluno()">BUSCAR</button>
-							</form>
+					<div class="modal-body">
+						<form>
+							<div class="mb-3">
+								<label for="nomeAluno" class="col-form-label">Buscar
+									Alunos:</label> <input type="text" class="form-control" id="nomeAluno"
+									placeholder="Digite o nome ou matrícula do aluno">
+							</div>
+							<button type="button" class="btn btn-primary"
+								onclick="pesquisaAluno()">BUSCAR</button>
+						</form>
 
-							<table class="table" id="tabelaResultado">
-								<thead>
-									<tr>
-										<th scope="col">ID</th>
-										<th scope="col">NOME</th>
-										<th scope="col">TELEFONE</th>
-										<th scope="col">AÇÕES</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-							</table>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-bs-dismiss="modal">SAIR</button>
-						</div>
+						<table class="table" id="tabelaResultado">
+							<thead>
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">NOME</th>
+									<th scope="col">TELEFONE</th>
+									<th scope="col">AÇÕES</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-bs-dismiss="modal">SAIR</button>
 					</div>
 				</div>
 			</div>
-	
+		</div>
+
 
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"
 			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -168,13 +168,17 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 		<script type="text/javascript">
+			function voltarPagina() {
+				window.location.href = 'principal.html';
+			}
+
 			/*DELETAR ALUNO DA TELA DE EDIÇÃO*/
 			function deleteAlunoTela() {
 				var id = $('#id').val();
-				
-				if(id != null && id.trim() !=''){
-				deleteAluno(id);
-				$('#formCadastroAluno')[0].reset();
+
+				if (id != null && id.trim() != '') {
+					deleteAluno(id);
+					$('#formCadastroAluno')[0].reset();
 				}
 			}
 
@@ -271,19 +275,18 @@
 				var uf = $("#uf").val();
 				var cep = $("#cep").val();
 				var cpf = $("#cpf").val();
-				
-				
+
 				/*Validação dos campos*/
 				if (!cpf || !nome || !telefone) {
-				    alert("Os campos CPF, Nome e Telefone são obrigatórios.");
-				    if (!cpf) {
-				        $("#cpf").focus();
-				    } else if (!nome) {
-				        $("#nome").focus();
-				    } else {
-				        $("#telefone").focus();
-				    }
-				    return;
+					alert("Os campos CPF, Nome e Telefone são obrigatórios.");
+					if (!cpf) {
+						$("#cpf").focus();
+					} else if (!nome) {
+						$("#nome").focus();
+					} else {
+						$("#telefone").focus();
+					}
+					return;
 				}
 
 				$.ajax({

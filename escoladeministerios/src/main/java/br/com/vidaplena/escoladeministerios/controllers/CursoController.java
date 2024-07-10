@@ -51,7 +51,7 @@ public class CursoController {
 	/* SALVAR CURSO */
 	@PostMapping(value = "salvarCurso")
 	@ResponseBody
-	public ResponseEntity<Curso> salvaralunos(@RequestBody Curso cursos) {
+	public ResponseEntity<Curso> salvarCurso(@RequestBody Curso cursos) {
 
 		Curso curso = cursoRepository.save(cursos);
 
