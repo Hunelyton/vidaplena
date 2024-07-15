@@ -26,6 +26,7 @@ public class CursoController {
 
 	@Autowired
 	private CursoRepository cursoRepository;
+	private Curso curso;
 
 	/**
 	 *
@@ -49,11 +50,11 @@ public class CursoController {
 	}
 
 	/* SALVAR CURSO */
-	@PostMapping(value = "salvarCurso")
+	@PostMapping(value = "salvarcurso")
 	@ResponseBody
 	public ResponseEntity<Curso> salvarCurso(@RequestBody Curso cursos) {
 
-		Curso curso = cursoRepository.save(cursos);
+		curso = cursoRepository.save(cursos);
 
 		return new ResponseEntity<Curso>(cursos, HttpStatus.CREATED);
 

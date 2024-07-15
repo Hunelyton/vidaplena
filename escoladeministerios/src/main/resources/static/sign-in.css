@@ -24,8 +24,7 @@ body {
   border-top-right-radius: 0;
 }
 
-.logo{
-	align-items: auto;
-		width: 280px;
-		height: 190px;
+.logo {
+  width: 50.4px; /* 30% menos que 72px */
+  height: 39.9px; /* 30% menos que 57px */
 }

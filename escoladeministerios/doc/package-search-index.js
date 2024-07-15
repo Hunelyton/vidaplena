@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"br.com.vidaplena.escoladeministerios"},{"l":"br.com.vidaplena.escoladeministerios.alunos.model"},{"l":"br.com.vidaplena.escoladeministerios.controllers"},{"l":"br.com.vidaplena.escoladeministerios.repository"},{"l":"br.com.vidaplena.escoladeministerios.teste"}];updateSearchResults();

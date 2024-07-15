@@ -4,7 +4,10 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
+ .logo {
+  width: 50.4px; /* 30% menos que 72px */
+  height: 39.9px; /* 30% menos que 57px */
+}
 :root {
 	--brand-primary: #121214;
 	--brand-secondary: #202024;

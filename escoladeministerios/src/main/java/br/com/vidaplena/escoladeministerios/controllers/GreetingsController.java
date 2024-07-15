@@ -25,6 +25,7 @@ import br.com.vidaplena.escoladeministerios.repository.AlunoRepository;
  * A sample greetings controller to return greeting text
  */
 @RestController
+
 public class GreetingsController {
 
 	@Autowired
